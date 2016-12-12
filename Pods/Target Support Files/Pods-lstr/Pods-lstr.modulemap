@@ -1,0 +1,6 @@
+framework module Pods_lstr {
+  umbrella header "Pods-lstr-umbrella.h"
+
+  export *
+  module * { export * }
+}
