@@ -11,13 +11,19 @@ import Foundation
 class List {
     
     private var _listName: String!
+    private var _listKey: String!
     
     var listName: String {
         return _listName
     }
     
-    init(name: String) {
+    var listKey: String {
+        return _listKey
+    }
+    
+    init(name: String, key: String) {
         self._listName = name
+        self._listKey = key
     }
     
 }

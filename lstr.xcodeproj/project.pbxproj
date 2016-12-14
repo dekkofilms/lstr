@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6B41621E01F0C6007AB41E /* TaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B41611E01F0C6007AB41E /* TaskListVC.swift */; };
+		3B6B41641E01F19C007AB41E /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B41631E01F19C007AB41E /* TaskCell.swift */; };
 		3BD4E5A41DFF3ADB00619C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4E5A31DFF3ADB00619C39 /* AppDelegate.swift */; };
 		3BD4E5A61DFF3ADB00619C39 /* MainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4E5A51DFF3ADB00619C39 /* MainListVC.swift */; };
 		3BD4E5A91DFF3ADB00619C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4E5A71DFF3ADB00619C39 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		1504E43F3858CCF0D87883C6 /* Pods-lstr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lstr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lstr/Pods-lstr.debug.xcconfig"; sourceTree = "<group>"; };
+		3B6B41611E01F0C6007AB41E /* TaskListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListVC.swift; sourceTree = "<group>"; };
+		3B6B41631E01F19C007AB41E /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		3BD4E5A01DFF3ADB00619C39 /* lstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD4E5A31DFF3ADB00619C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD4E5A51DFF3ADB00619C39 /* MainListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListVC.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				3BD4E5C31DFF48D300619C39 /* SingleBorderBottom.swift */,
 				3BD4E5C91E0093C100619C39 /* ListCell.swift */,
+				3B6B41631E01F19C007AB41E /* TaskCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				3BD4E5A51DFF3ADB00619C39 /* MainListVC.swift */,
 				3BD4E5BA1DFF3D7700619C39 /* SignInVC.swift */,
 				3BD4E5C51DFF4F0200619C39 /* SignUpVC.swift */,
+				3B6B41611E01F0C6007AB41E /* TaskListVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -291,8 +297,10 @@
 				3BD4E5BB1DFF3D7700619C39 /* SignInVC.swift in Sources */,
 				3BD4E5C41DFF48D300619C39 /* SingleBorderBottom.swift in Sources */,
 				3BD4E5C61DFF4F0200619C39 /* SignUpVC.swift in Sources */,
+				3B6B41641E01F19C007AB41E /* TaskCell.swift in Sources */,
 				3BD4E5BF1DFF3E0A00619C39 /* Constants.swift in Sources */,
 				3BD4E5CC1E00942600619C39 /* List.swift in Sources */,
+				3B6B41621E01F0C6007AB41E /* TaskListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

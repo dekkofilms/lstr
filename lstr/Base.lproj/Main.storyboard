@@ -177,7 +177,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signOutBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Wf-Ve-4tl"/>
+                                    <action selector="addNewListBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdB-FA-duh"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xau-e6-7qs">
@@ -193,7 +193,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopping List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pU-zY-oQU">
                                                     <frame key="frameInset" minX="16" minY="8" width="351" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="31"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="31"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -204,6 +204,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wib-Qn-Mby"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1Bp-Hm-YtJ"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Lists:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LT-1N-Dnl">
                                 <constraints>
@@ -237,6 +241,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="296.80000000000001" y="422.33883058470769"/>
+        </scene>
+        <!--Task ListVC-->
+        <scene sceneID="rIb-5U-0Uj">
+            <objects>
+                <viewController storyboardIdentifier="TaskListVC" id="b51-Dl-H9w" customClass="TaskListVC" customModule="lstr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dx4-LN-zY6"/>
+                        <viewControllerLayoutGuide type="bottom" id="y7V-7N-Mcq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c1W-82-b7H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SA-mf-jNS">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6ED-Pi-toh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ArY-f3-Gh0"/>
+                                    <constraint firstAttribute="height" constant="30" id="Nr9-tq-nqY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="gN7-gR-65M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskBtnTapped:" destination="b51-Dl-H9w" eventType="touchUpInside" id="XxU-Dg-gfY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-HI-35H">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Ip-1JY">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="65" id="6bM-LB-ZQv" customClass="TaskCell" customModule="lstr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bM-LB-ZQv" id="KjZ-8J-vqc">
+                                            <frame key="frameInset" width="375" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-U2-tef">
+                                                    <frame key="frameInset" minX="12" minY="13" width="351" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="31"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDT-PO-SWG">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="3Cg-fb-YNB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnTapped:" destination="b51-Dl-H9w" eventType="touchUpInside" id="8IM-Bj-Y8n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8SA-mf-jNS" firstAttribute="trailing" secondItem="c1W-82-b7H" secondAttribute="trailingMargin" id="FBj-sS-8rO"/>
+                            <constraint firstItem="bhb-HI-35H" firstAttribute="trailing" secondItem="c1W-82-b7H" secondAttribute="trailingMargin" id="Hnn-O1-TnO"/>
+                            <constraint firstItem="8SA-mf-jNS" firstAttribute="top" secondItem="Dx4-LN-zY6" secondAttribute="bottom" constant="6" id="SaL-JD-dA7"/>
+                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leading" id="XHb-6r-CsK"/>
+                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="top" secondItem="bhb-HI-35H" secondAttribute="bottom" constant="20" id="ZGm-w7-1yq"/>
+                            <constraint firstItem="y7V-7N-Mcq" firstAttribute="top" secondItem="ODk-Ip-1JY" secondAttribute="bottom" id="a1J-oZ-GfV"/>
+                            <constraint firstItem="vDT-PO-SWG" firstAttribute="top" secondItem="Dx4-LN-zY6" secondAttribute="bottom" constant="8" id="bOR-vk-dow"/>
+                            <constraint firstAttribute="trailing" secondItem="ODk-Ip-1JY" secondAttribute="trailing" id="kOc-vc-W1w"/>
+                            <constraint firstItem="bhb-HI-35H" firstAttribute="top" secondItem="vDT-PO-SWG" secondAttribute="bottom" constant="20" id="ta5-wz-iO5"/>
+                            <constraint firstItem="bhb-HI-35H" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leadingMargin" id="vgZ-yZ-vUb"/>
+                            <constraint firstItem="vDT-PO-SWG" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leadingMargin" id="xzi-7u-Xbp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="listNameLabel" destination="bhb-HI-35H" id="hMM-cf-dSO"/>
+                        <outlet property="tableView" destination="ODk-Ip-1JY" id="byY-w3-k38"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aan-i0-rbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1261.5999999999999" y="421.43928035982015"/>
         </scene>
     </scenes>
 </document>

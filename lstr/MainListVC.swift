@@ -19,23 +19,28 @@ class MainListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let listsRef = DataService.ds.REF_LISTS
-        
-        listsRef.observe(.value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                self.lists = []
-                for snap in snapshots {
-                    print("TAYLOR: snap ---- \(snap.value)")
-                    if let listDict = snap.value as? Dictionary<String, AnyObject> {
-                        print("TAYLOR: \(listDict["name"])")
-                    }
-                    //if let listName = snap["name"] as? String {
+        if let userKey = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            DataService.ds.REF_USERS.child(userKey).child("lists").observe(.value, with: { (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    print("TAYLOR-SNAPSHOT: \(snapshots)")
+                    
+                    
+                    self.lists = []
+                    for snap in snapshots {
+                        print("TAYLOR: snap ---- \(snap)")
+                        if let listDict = snap.value as? Dictionary<String, AnyObject> {
+                            print("TAYLOR: \(listDict)")
+                            self.lists.append(List(name: listDict["name"] as! String, key: snap.key))
+                            self.tableView.reloadData()
+                        }
+                        //if let listName = snap["name"] as? String {
                         //print("TAYLOR: \(listName)")
                         //let list = List(name: snap.name)
-                    //}
+                        //}
+                    }
                 }
-            }
-        })
+            })
+        }
         
     }
     
@@ -52,7 +57,6 @@ class MainListVC: UIViewController {
     }
     
     @IBAction func signOutBtnTapped(_ sender: AnyObject) {
-        
         do {
             try FIRAuth.auth()?.signOut()
             KeychainWrapper.standard.removeObject(forKey: KEY_UID)
@@ -68,6 +72,45 @@ class MainListVC: UIViewController {
         
     }
     
+    
+    @IBAction func addNewListBtnTapped(_ sender: AnyObject) {
+        let alertController: UIAlertController = UIAlertController(title: "Add a New List", message: "Make a new list", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter List Name"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result) in
+            print("cancel")
+        }
+        
+        let okAction = UIAlertAction(title: "Enter", style: UIAlertActionStyle.default) { (result) in
+            print("TAYLOR: \(alertController.textFields?.first?.text)")
+            
+            if let userKey = KeychainWrapper.standard.string(forKey: KEY_UID) {
+                let refLists = DataService.ds.REF_USERS.child(userKey).child("lists")
+                let newListID = refLists.childByAutoId()
+                
+                if let listName = alertController.textFields?.first?.text {
+                    newListID.setValue(["name" : listName], withCompletionBlock: { (error, ref) in
+                        if error != nil {
+                            print("TAYLOR: unable to push into database \(error)")
+                        } else {
+                            print("TAYLOR: successfully made it into the database \(ref.key)")
+                            DataService.ds.REF_LISTS.child(ref.key).setValue(["name" : listName])
+                        }
+                    })
+                }
+            }
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true) { 
+            print("TAYLOR: oh hai")
+        }
+        
+    }
 
 }
 
@@ -80,22 +123,37 @@ extension MainListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let list = lists[indexPath.row]
+        let list = lists[indexPath.row] as List
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListCell {
-            cell.configureCell(listName: list)
-            return cell
-        } else {
-            return ListCell()
-        }
+        print("TAYLOR: ---- table ---- \(list.listName)")
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
+        cell.configureCell(listName: list)
+        
+        return cell
     }
     
 }
 
 extension MainListVC: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let list = lists[indexPath.row] as List
+        
+        print("TAYLOR: Clicking on List --- \(list.listKey)")
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = sb.instantiateViewController(withIdentifier: "TaskListVC") as! TaskListVC
+        
+        viewController.list = list
+        
+        self.present(viewController, animated: true, completion: nil)
+
+    }
+    
 }
+
+
 
 
 
