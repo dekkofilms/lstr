@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TaskListVC: UIViewController {
 
@@ -30,6 +31,40 @@ class TaskListVC: UIViewController {
     
     
     @IBAction func addTaskBtnTapped(_ sender: AnyObject) {
+        
+        let alertController: UIAlertController = UIAlertController(title: "Add a Task", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Task Here"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result) in
+            print("cancel")
+        }
+        
+        let okAction = UIAlertAction(title: "Enter", style: UIAlertActionStyle.default) { (result) in
+            print("TAYLOR: \(alertController.textFields?.first?.text)")
+            
+            let tasksRef = DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks")
+                
+            if let taskName = alertController.textFields?.first?.text {
+                let task = Task(taskName: taskName, completed: false)
+                print("TAYLOR: ---task--- \(type(of: task))")
+                tasksRef.setValue(task, withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        print("TAYLOR: unable to push into database \(error)")
+                    } else {
+                        print("TAYLOR: successfully made it into the database \(ref)")
+                    }
+                })
+            }
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true) {
+            print("TAYLOR: oh hai")
+        }
     }
 
 }
