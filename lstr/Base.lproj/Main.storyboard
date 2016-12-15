@@ -293,8 +293,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskLabel" destination="TU0-U2-tef" id="oeO-P3-N81"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="b51-Dl-H9w" id="SKV-70-1JD"/>
+                                    <outlet property="delegate" destination="b51-Dl-H9w" id="oEv-GZ-hi5"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDT-PO-SWG">
                                 <constraints>

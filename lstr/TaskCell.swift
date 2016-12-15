@@ -9,6 +9,10 @@
 import UIKit
 
 class TaskCell: UITableViewCell {
+    
+    @IBOutlet weak var taskLabel: UILabel!
+    
+    var newTask: Task!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +23,11 @@ class TaskCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(task: Task) {
+        self.newTask = task
+        self.taskLabel.text = newTask.taskName
     }
 
 }

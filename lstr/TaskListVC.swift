@@ -15,9 +15,25 @@ class TaskListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var list: List!
+    var tasks = [Task]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataService.ds.REF_LISTS.child(list.listKey).child("tasks").observe(.value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                self.tasks = []
+                for snap in snapshots {
+                    
+                    if let taskDict = snap.value as? Dictionary<String, AnyObject> {
+                        print("TAYLOR: ---snap--- \(taskDict)")
+                        self.tasks.append(Task(taskName: taskDict["name"] as! String, completed: taskDict["completed"] as! Bool))
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,3 +84,26 @@ class TaskListVC: UIViewController {
         }
     }
 }
+
+
+extension TaskListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let task = tasks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
+        cell.configureCell(task: task)
+        
+        return cell
+    }
+}
+
+
+
+
+
+
