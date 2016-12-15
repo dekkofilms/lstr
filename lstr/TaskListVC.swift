@@ -24,7 +24,6 @@ class TaskListVC: UIViewController {
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 self.tasks = []
                 for snap in snapshots {
-                    
                     if let taskDict = snap.value as? Dictionary<String, AnyObject> {
                         print("TAYLOR: ---snap--- \(taskDict)")
                         self.tasks.append(Task(taskName: taskDict["name"] as! String, completed: taskDict["completed"] as! Bool))
@@ -32,7 +31,6 @@ class TaskListVC: UIViewController {
                     }
                 }
             }
-            
         })
     }
     
@@ -100,6 +98,25 @@ extension TaskListVC: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+}
+
+extension TaskListVC: UITableViewDelegate {
+    
+    @objc(tableView:commitEditingStyle:forRowAtIndexPath:) func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let taskItem = tasks[indexPath.row]
+            DataService.ds.REF_LISTS.child(list.listKey).child("tasks").child(taskItem.taskName.lowercased()).removeValue()
+        }
+    }
+    
+    
+    
+
 }
 
 
