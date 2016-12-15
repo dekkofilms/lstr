@@ -26,4 +26,11 @@ class Task {
         self._completed = completed
     }
     
+    func toAnyObject() -> Any {
+        return [
+            "name": _taskName,
+            "completed": _completed
+        ]
+    }
+    
 }

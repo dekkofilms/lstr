@@ -47,9 +47,10 @@ class TaskListVC: UIViewController {
             let tasksRef = DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks")
                 
             if let taskName = alertController.textFields?.first?.text {
+                let taskRef = tasksRef.child(taskName.lowercased())
+                
                 let task = Task(taskName: taskName, completed: false)
-                print("TAYLOR: ---task--- \(type(of: task))")
-                tasksRef.setValue(task, withCompletionBlock: { (error, ref) in
+                taskRef.setValue(task.toAnyObject(), withCompletionBlock: { (error, ref) in
                     if error != nil {
                         print("TAYLOR: unable to push into database \(error)")
                     } else {
@@ -66,5 +67,4 @@ class TaskListVC: UIViewController {
             print("TAYLOR: oh hai")
         }
     }
-
 }
