@@ -103,20 +103,34 @@ extension TaskListVC: UITableViewDataSource {
         return true
     }
     
+    @objc(tableView:editActionsForRowAtIndexPath:) func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let task = tasks[indexPath.row]
+        
+        
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
+            print("TAYLOR \(task.taskName)")
+            print("edit button tapped")
+        }
+        edit.backgroundColor = UIColor.blue
+        
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, indexPath in
+            print("TAYLOR \(task)")
+            DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks").child(task.taskName.lowercased()).removeValue()
+            print("favorite button tapped")
+        }
+        delete.backgroundColor = UIColor.red
+        
+        return [delete, edit]
+    }
+    
 }
 
 extension TaskListVC: UITableViewDelegate {
-    
-    @objc(tableView:commitEditingStyle:forRowAtIndexPath:) func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let taskItem = tasks[indexPath.row]
-            DataService.ds.REF_LISTS.child(list.listKey).child("tasks").child(taskItem.taskName.lowercased()).removeValue()
-        }
+    @objc(tableView:commitEditingStyle:forRowAtIndexPath:) func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //apparently this method does nothing, and i hate that, but you need this
     }
-    
-    
-    
-
 }
 
 
