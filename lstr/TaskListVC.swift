@@ -20,6 +20,9 @@ class TaskListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         DataService.ds.REF_LISTS.child(list.listKey).child("tasks").observe(.value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 self.tasks = []
@@ -107,13 +110,12 @@ extension TaskListVC: UITableViewDataSource {
         
         let task = tasks[indexPath.row]
         
-        
-        
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
             print("TAYLOR \(task.taskName)")
             print("edit button tapped")
         }
-        edit.backgroundColor = UIColor.blue
+        
+        edit.backgroundColor = UIColor.lightGray
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, indexPath in
             print("TAYLOR \(task)")

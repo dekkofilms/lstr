@@ -284,14 +284,30 @@
                                             <frame key="frameInset" width="375" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-U2-tef">
-                                                    <frame key="frameInset" minX="12" minY="13" width="351" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="task 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-U2-tef">
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="31"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcp-xm-5xJ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="h7I-TI-WCM"/>
+                                                        <constraint firstAttribute="height" constant="20" id="rRq-g5-Zxa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="31"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Dcp-xm-5xJ" firstAttribute="centerY" secondItem="TU0-U2-tef" secondAttribute="centerY" id="2Hr-0f-8iS"/>
+                                                <constraint firstItem="TU0-U2-tef" firstAttribute="top" secondItem="KjZ-8J-vqc" secondAttribute="topMargin" id="6l3-Pt-VK2"/>
+                                                <constraint firstItem="TU0-U2-tef" firstAttribute="leading" secondItem="KjZ-8J-vqc" secondAttribute="leadingMargin" id="E8u-bS-kSI"/>
+                                                <constraint firstItem="TU0-U2-tef" firstAttribute="bottom" secondItem="KjZ-8J-vqc" secondAttribute="bottomMargin" id="SLH-Ja-yvq"/>
+                                                <constraint firstItem="Dcp-xm-5xJ" firstAttribute="centerY" secondItem="KjZ-8J-vqc" secondAttribute="centerY" id="UCy-9O-hjf"/>
+                                                <constraint firstItem="Dcp-xm-5xJ" firstAttribute="trailing" secondItem="KjZ-8J-vqc" secondAttribute="trailingMargin" id="ol7-N9-7rw"/>
+                                                <constraint firstItem="Dcp-xm-5xJ" firstAttribute="leading" secondItem="TU0-U2-tef" secondAttribute="trailing" constant="8" symbolic="YES" id="vA4-CK-UQQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="taskLabel" destination="TU0-U2-tef" id="oeO-P3-N81"/>
