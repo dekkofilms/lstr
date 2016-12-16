@@ -20,6 +20,10 @@ class TaskListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0);
+        //rgba(248, 242, 240, 1)
+        self.tableView.backgroundColor = UIColor.init(red: 248/255, green: 242/255, blue: 240/255, alpha: 1.0)
+        
         tableView.estimatedRowHeight = 65
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -100,6 +104,10 @@ extension TaskListVC: UITableViewDataSource {
         
         cell.configureCell(task: task)
         
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
+        
         return cell
     }
     
@@ -136,14 +144,16 @@ extension TaskListVC: UITableViewDataSource {
             self.present(alertController, animated: true, completion: nil)
         }
         
-        edit.backgroundColor = UIColor.lightGray
+        //rgba(217, 202, 196, 1)
+        edit.backgroundColor = UIColor.init(red: 217/255, green: 202/255, blue: 196/255, alpha: 1.0)
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, indexPath in
             print("TAYLOR \(task)")
             DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks").child(task.taskKey).removeValue()
             print("favorite button tapped")
         }
-        delete.backgroundColor = UIColor.red
+        //rgba(231, 76, 60,1.0) -- red OR rgba(117, 83, 73, 1) -- dark brown
+        delete.backgroundColor = UIColor.init(red: 117/255, green: 83/255, blue: 73/255, alpha: 1.0)
         
         return [delete, edit]
     }
@@ -168,6 +178,14 @@ extension TaskListVC: UITableViewDelegate {
             
             
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        ////rgba(215, 167, 164, 1)
+        //cell.backgroundColor = UIColor.init(red: 215/255, green: 167/255, blue: 164/255, alpha: 0.1)
+        cell.backgroundColor = UIColor.clear
+    }
+    
 }
 
 

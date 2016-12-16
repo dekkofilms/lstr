@@ -19,6 +19,10 @@ class MainListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0);
+        //rgba(248, 242, 240, 1)
+        self.tableView.backgroundColor = UIColor.init(red: 248/255, green: 242/255, blue: 240/255, alpha: 1.0)
+        
         if let userKey = KeychainWrapper.standard.string(forKey: KEY_UID) {
             DataService.ds.REF_USERS.child(userKey).child("lists").observe(.value, with: { (snapshot) in
                 if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -130,6 +134,10 @@ extension MainListVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
         cell.configureCell(listName: list)
         
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
+        
         return cell
     }
     
@@ -150,6 +158,13 @@ extension MainListVC: UITableViewDelegate {
         
         self.present(viewController, animated: true, completion: nil)
 
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        ////rgba(215, 167, 164, 1)
+        //cell.backgroundColor = UIColor.init(red: 215/255, green: 167/255, blue: 164/255, alpha: 0.1)
+        cell.backgroundColor = UIColor.clear
     }
     
 }

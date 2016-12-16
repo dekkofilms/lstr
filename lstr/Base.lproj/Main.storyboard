@@ -6,6 +6,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+        <array key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign InVC-->
         <scene sceneID="RgN-Ce-4Ar">
@@ -22,12 +30,12 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-yb-ph5">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.42352941179999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-yA-wam" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
@@ -38,7 +46,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVC-Vt-nex" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
@@ -46,8 +54,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USd-qH-Wgu">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USd-qH-Wgu" customClass="CircleButton" customModule="lstr" customModuleProvider="target">
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -106,12 +114,12 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKD-ey-8Go">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.42352941179999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dtp-R8-4Vy" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
@@ -122,7 +130,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojj-qO-g1a" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
@@ -130,8 +138,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xva-jF-E1o">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xva-jF-E1o" customClass="CircleButton" customModule="lstr" customModuleProvider="target">
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -142,7 +150,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCi-Eb-9X3" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
@@ -191,13 +199,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWA-Dw-ysk">
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Lists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LT-1N-Dnl">
+                                        <frame key="frameInset" minX="16" minY="25" width="343" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="22"/>
+                                        <color key="textColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.42352941176470588" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynn-lB-7xd">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="314-fu-yAF"/>
+                                    <constraint firstAttribute="width" constant="83" id="FG4-h3-qrj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -207,10 +224,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwY-yr-yo3">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="8Dt-LF-Mp8"/>
-                                    <constraint firstAttribute="height" constant="30" id="oDo-06-Fs5"/>
+                                    <constraint firstAttribute="height" constant="30" id="3jb-8v-TWs"/>
+                                    <constraint firstAttribute="width" constant="30" id="HWb-5D-EkQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="35"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -218,24 +235,28 @@
                                     <action selector="addNewListBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdB-FA-duh"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xau-e6-7qs">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="65" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xau-e6-7qs">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="65" id="P3d-ax-0Mu" customClass="ListCell" customModule="lstr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P3d-ax-0Mu" id="lqb-IJ-Xjv">
-                                            <frame key="frameInset" width="375" height="65"/>
+                                            <frame key="frameInset" width="375" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopping List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pU-zY-oQU">
-                                                    <frame key="frameInset" minX="16" minY="8" width="351" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="31"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopping List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pU-zY-oQU">
+                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="31"/>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.42352941176470588" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4pU-zY-oQU" firstAttribute="trailing" secondItem="lqb-IJ-Xjv" secondAttribute="trailingMargin" id="A34-c7-9mw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4pU-zY-oQU" secondAttribute="bottom" constant="5" id="KaM-L7-XDG"/>
+                                                <constraint firstItem="4pU-zY-oQU" firstAttribute="top" secondItem="lqb-IJ-Xjv" secondAttribute="topMargin" constant="5" id="ehn-WN-u67"/>
+                                                <constraint firstItem="4pU-zY-oQU" firstAttribute="leading" secondItem="lqb-IJ-Xjv" secondAttribute="leadingMargin" constant="18" id="vPx-UJ-rw6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="listNameField" destination="4pU-zY-oQU" id="UmB-hm-bTk"/>
@@ -247,29 +268,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1Bp-Hm-YtJ"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Lists:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LT-1N-Dnl">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JwY-yr-yo3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="6" id="0Yr-vU-5C7"/>
-                            <constraint firstItem="3LT-1N-Dnl" firstAttribute="top" secondItem="ynn-lB-7xd" secondAttribute="bottom" constant="20" id="2HH-eQ-zQ6"/>
-                            <constraint firstItem="JwY-yr-yo3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Bs2-jd-SoT"/>
-                            <constraint firstItem="xau-e6-7qs" firstAttribute="top" secondItem="sWA-Dw-ysk" secondAttribute="bottom" constant="8" id="E5B-xO-qsB"/>
-                            <constraint firstItem="ynn-lB-7xd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hci-tR-LFU"/>
-                            <constraint firstAttribute="trailing" secondItem="xau-e6-7qs" secondAttribute="trailing" id="JXh-iP-x9d"/>
-                            <constraint firstItem="xau-e6-7qs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LC2-SB-eys"/>
-                            <constraint firstItem="sWA-Dw-ysk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PT2-4M-VzY"/>
-                            <constraint firstItem="3LT-1N-Dnl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RGf-ON-lfb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xau-e6-7qs" secondAttribute="bottom" id="VAs-QE-Pva"/>
-                            <constraint firstItem="xau-e6-7qs" firstAttribute="top" secondItem="3LT-1N-Dnl" secondAttribute="bottom" constant="20" id="WgK-W5-B45"/>
-                            <constraint firstItem="sWA-Dw-ysk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aPS-fV-xL7"/>
-                            <constraint firstItem="3LT-1N-Dnl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="djU-wo-yEd"/>
-                            <constraint firstAttribute="trailing" secondItem="sWA-Dw-ysk" secondAttribute="trailing" id="qee-nQ-oWp"/>
-                            <constraint firstItem="ynn-lB-7xd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="vDO-nQ-oJm"/>
+                            <constraint firstItem="JwY-yr-yo3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="559-uh-q6D"/>
+                            <constraint firstItem="sWA-Dw-ysk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DHW-bi-ObG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sWA-Dw-ysk" secondAttribute="bottom" constant="598" id="E9D-kq-nRA"/>
+                            <constraint firstItem="xau-e6-7qs" firstAttribute="top" secondItem="ynn-lB-7xd" secondAttribute="bottom" constant="8" id="H8U-Vc-KNB"/>
+                            <constraint firstItem="ynn-lB-7xd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Rq7-f3-AIy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xau-e6-7qs" secondAttribute="bottom" id="UeE-aj-dDt"/>
+                            <constraint firstAttribute="trailing" secondItem="sWA-Dw-ysk" secondAttribute="trailing" id="cOx-Ld-atb"/>
+                            <constraint firstItem="ynn-lB-7xd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d2d-me-s5j"/>
+                            <constraint firstItem="xau-e6-7qs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lnO-5O-juC"/>
+                            <constraint firstAttribute="trailing" secondItem="xau-e6-7qs" secondAttribute="trailing" id="qik-D6-Z3B"/>
+                            <constraint firstItem="sWA-Dw-ysk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xqe-9f-cyO"/>
+                            <constraint firstItem="JwY-yr-yo3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zao-2K-esd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -294,16 +307,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKl-oS-pUA">
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-HI-35H">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="ai5-aD-hBU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.42352941179999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bhb-HI-35H" firstAttribute="top" secondItem="bKl-oS-pUA" secondAttribute="top" constant="25" id="7nt-t5-7n6"/>
+                                    <constraint firstItem="bhb-HI-35H" firstAttribute="leading" secondItem="bKl-oS-pUA" secondAttribute="leading" constant="16" id="977-ed-kNu"/>
+                                    <constraint firstAttribute="trailing" secondItem="bhb-HI-35H" secondAttribute="trailing" constant="16" id="Ib8-e7-ljy"/>
+                                    <constraint firstAttribute="bottom" secondItem="bhb-HI-35H" secondAttribute="bottom" constant="8" id="TXy-Ug-T7B"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SA-mf-jNS">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="6ED-Pi-toh"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ArY-f3-Gh0"/>
                                     <constraint firstAttribute="height" constant="30" id="Nr9-tq-nqY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="gN7-gR-65M"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="35"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -313,9 +340,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDT-PO-SWG">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="3Cg-fb-YNB"/>
+                                    <constraint firstAttribute="width" constant="64" id="h0X-eM-0wi"/>
+                                    <constraint firstAttribute="height" constant="33" id="qFU-fH-syQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
                                 <state key="normal" title="&lt; Back">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -323,24 +351,19 @@
                                     <action selector="backBtnTapped:" destination="b51-Dl-H9w" eventType="touchUpInside" id="8IM-Bj-Y8n"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-HI-35H">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Ip-1JY">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="65" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Ip-1JY">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="65" id="6bM-LB-ZQv" customClass="TaskCell" customModule="lstr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bM-LB-ZQv" id="KjZ-8J-vqc">
-                                            <frame key="frameInset" width="375" height="65"/>
+                                            <frame key="frameInset" width="375" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="task 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-U2-tef">
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="31"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="31"/>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.42352941179999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcp-xm-5xJ">
@@ -354,9 +377,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Dcp-xm-5xJ" firstAttribute="centerY" secondItem="TU0-U2-tef" secondAttribute="centerY" id="2Hr-0f-8iS"/>
                                                 <constraint firstItem="TU0-U2-tef" firstAttribute="top" secondItem="KjZ-8J-vqc" secondAttribute="topMargin" id="6l3-Pt-VK2"/>
-                                                <constraint firstItem="TU0-U2-tef" firstAttribute="leading" secondItem="KjZ-8J-vqc" secondAttribute="leadingMargin" id="E8u-bS-kSI"/>
+                                                <constraint firstItem="TU0-U2-tef" firstAttribute="leading" secondItem="KjZ-8J-vqc" secondAttribute="leadingMargin" constant="18" id="E8u-bS-kSI"/>
                                                 <constraint firstItem="TU0-U2-tef" firstAttribute="bottom" secondItem="KjZ-8J-vqc" secondAttribute="bottomMargin" id="SLH-Ja-yvq"/>
                                                 <constraint firstItem="Dcp-xm-5xJ" firstAttribute="centerY" secondItem="KjZ-8J-vqc" secondAttribute="centerY" id="UCy-9O-hjf"/>
                                                 <constraint firstItem="Dcp-xm-5xJ" firstAttribute="trailing" secondItem="KjZ-8J-vqc" secondAttribute="trailingMargin" id="ol7-N9-7rw"/>
@@ -376,21 +398,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="top" secondItem="bKl-oS-pUA" secondAttribute="bottom" constant="8" id="9Zh-RH-ljU"/>
-                            <constraint firstItem="8SA-mf-jNS" firstAttribute="trailing" secondItem="c1W-82-b7H" secondAttribute="trailingMargin" id="FBj-sS-8rO"/>
-                            <constraint firstItem="bhb-HI-35H" firstAttribute="trailing" secondItem="c1W-82-b7H" secondAttribute="trailingMargin" id="Hnn-O1-TnO"/>
-                            <constraint firstAttribute="trailing" secondItem="bKl-oS-pUA" secondAttribute="trailing" id="ONe-s4-nz6"/>
-                            <constraint firstItem="8SA-mf-jNS" firstAttribute="top" secondItem="Dx4-LN-zY6" secondAttribute="bottom" constant="6" id="SaL-JD-dA7"/>
-                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leading" id="XHb-6r-CsK"/>
-                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="top" secondItem="bhb-HI-35H" secondAttribute="bottom" constant="20" id="ZGm-w7-1yq"/>
-                            <constraint firstItem="y7V-7N-Mcq" firstAttribute="top" secondItem="ODk-Ip-1JY" secondAttribute="bottom" id="a1J-oZ-GfV"/>
-                            <constraint firstItem="vDT-PO-SWG" firstAttribute="top" secondItem="Dx4-LN-zY6" secondAttribute="bottom" constant="8" id="bOR-vk-dow"/>
-                            <constraint firstItem="bKl-oS-pUA" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leading" id="gS0-sW-Kl9"/>
-                            <constraint firstItem="bKl-oS-pUA" firstAttribute="top" secondItem="c1W-82-b7H" secondAttribute="top" id="igs-OC-g92"/>
-                            <constraint firstAttribute="trailing" secondItem="ODk-Ip-1JY" secondAttribute="trailing" id="kOc-vc-W1w"/>
-                            <constraint firstItem="bhb-HI-35H" firstAttribute="top" secondItem="vDT-PO-SWG" secondAttribute="bottom" constant="20" id="ta5-wz-iO5"/>
-                            <constraint firstItem="bhb-HI-35H" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leadingMargin" id="vgZ-yZ-vUb"/>
-                            <constraint firstItem="vDT-PO-SWG" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leadingMargin" id="xzi-7u-Xbp"/>
+                            <constraint firstAttribute="trailing" secondItem="ODk-Ip-1JY" secondAttribute="trailing" id="97M-oI-zhE"/>
+                            <constraint firstItem="bKl-oS-pUA" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leading" id="9uY-Gj-5q4"/>
+                            <constraint firstAttribute="trailing" secondItem="bKl-oS-pUA" secondAttribute="trailing" id="GCI-gI-kQX"/>
+                            <constraint firstItem="8SA-mf-jNS" firstAttribute="top" secondItem="Dx4-LN-zY6" secondAttribute="bottom" constant="8" id="SaL-JD-dA7"/>
+                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="top" secondItem="bKl-oS-pUA" secondAttribute="bottom" id="Y2v-9z-z1p"/>
+                            <constraint firstItem="vDT-PO-SWG" firstAttribute="top" secondItem="Dx4-LN-zY6" secondAttribute="bottom" constant="8" id="YC5-iw-cbB"/>
+                            <constraint firstItem="vDT-PO-SWG" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leadingMargin" id="b1v-FY-2HA"/>
+                            <constraint firstItem="ODk-Ip-1JY" firstAttribute="leading" secondItem="c1W-82-b7H" secondAttribute="leading" id="jRx-0A-gmR"/>
+                            <constraint firstItem="bKl-oS-pUA" firstAttribute="top" secondItem="c1W-82-b7H" secondAttribute="top" id="kjj-XU-oAL"/>
+                            <constraint firstItem="y7V-7N-Mcq" firstAttribute="top" secondItem="ODk-Ip-1JY" secondAttribute="bottom" id="lIQ-ES-rxc"/>
+                            <constraint firstItem="8SA-mf-jNS" firstAttribute="trailing" secondItem="c1W-82-b7H" secondAttribute="trailingMargin" id="mRu-2s-pYU"/>
                         </constraints>
                     </view>
                     <connections>

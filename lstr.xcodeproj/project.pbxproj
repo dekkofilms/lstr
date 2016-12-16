@@ -23,6 +23,9 @@
 		3BD4E5C81DFF51E900619C39 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4E5C71DFF51E900619C39 /* DataService.swift */; };
 		3BD4E5CA1E0093C100619C39 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4E5C91E0093C100619C39 /* ListCell.swift */; };
 		3BD4E5CC1E00942600619C39 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4E5CB1E00942600619C39 /* List.swift */; };
+		3BD6874A1E0446E300360801 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD687491E0446E300360801 /* CircleButton.swift */; };
+		3BD6874F1E044E9800360801 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6874E1E044C1B00360801 /* Lato-Medium.ttf */; };
+		3BD687501E044E9800360801 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6874D1E044C1300360801 /* Lato-Light.ttf */; };
 		423A74816D40863FF806EB40 /* Pods_lstr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5115E178C3C1DFCD1612318E /* Pods_lstr.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		3BD4E5C71DFF51E900619C39 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3BD4E5C91E0093C100619C39 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		3BD4E5CB1E00942600619C39 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		3BD687491E0446E300360801 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		3BD6874D1E044C1300360801 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		3BD6874E1E044C1B00360801 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		5115E178C3C1DFCD1612318E /* Pods_lstr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lstr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FDF84522A0DF43AAF14879 /* Pods-lstr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lstr.release.xcconfig"; path = "Pods/Target Support Files/Pods-lstr/Pods-lstr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +107,7 @@
 		3BD4E5A21DFF3ADB00619C39 /* lstr */ = {
 			isa = PBXGroup;
 			children = (
+				3BD6874C1E044BF100360801 /* Fonts */,
 				3BD4E5C01DFF3E6300619C39 /* lstr.entitlements */,
 				3BD4E5BD1DFF3DFC00619C39 /* Services */,
 				3BD4E5BC1DFF3DD200619C39 /* Util */,
@@ -132,6 +139,7 @@
 				3BD4E5C31DFF48D300619C39 /* SingleBorderBottom.swift */,
 				3BD4E5C91E0093C100619C39 /* ListCell.swift */,
 				3B6B41631E01F19C007AB41E /* TaskCell.swift */,
+				3BD687491E0446E300360801 /* CircleButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -161,6 +169,15 @@
 				3BD4E5C71DFF51E900619C39 /* DataService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		3BD6874C1E044BF100360801 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3BD6874E1E044C1B00360801 /* Lato-Medium.ttf */,
+				3BD6874D1E044C1300360801 /* Lato-Light.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +248,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD6874F1E044E9800360801 /* Lato-Medium.ttf in Resources */,
+				3BD687501E044E9800360801 /* Lato-Light.ttf in Resources */,
 				3BD4E5AE1DFF3ADB00619C39 /* LaunchScreen.storyboard in Resources */,
 				3BD4E5AB1DFF3ADB00619C39 /* Assets.xcassets in Resources */,
 				3BD4E5A91DFF3ADB00619C39 /* Main.storyboard in Resources */,
@@ -298,6 +317,7 @@
 				3BD4E5C81DFF51E900619C39 /* DataService.swift in Sources */,
 				3BD4E5A41DFF3ADB00619C39 /* AppDelegate.swift in Sources */,
 				3B6B41661E0243BB007AB41E /* Task.swift in Sources */,
+				3BD6874A1E0446E300360801 /* CircleButton.swift in Sources */,
 				3BD4E5BB1DFF3D7700619C39 /* SignInVC.swift in Sources */,
 				3BD4E5C41DFF48D300619C39 /* SingleBorderBottom.swift in Sources */,
 				3BD4E5C61DFF4F0200619C39 /* SignUpVC.swift in Sources */,

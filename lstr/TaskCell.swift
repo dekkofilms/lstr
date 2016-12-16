@@ -33,10 +33,12 @@ class TaskCell: UITableViewCell {
     func toggleCompletion(_ cell: TaskCell, toggledCompletion: Bool) {
         if !toggledCompletion {
             //cell.taskLabel?.text = self.taskLabel.text
-            cell.taskLabel?.textColor = UIColor.black
+            //rgba(153, 108, 93, 1)
+            cell.taskLabel?.textColor = UIColor.init(red: 153/255, green: 108/255, blue: 93/255, alpha: 1.0)
         } else {
             //cell.taskLabel?.text = "\u{2714}"
-            cell.taskLabel?.textColor = UIColor.gray
+            //rgba(117, 83, 73, 1) dark brown or rgba(229, 115, 115, 1) red
+            cell.taskLabel?.textColor = UIColor.init(red: 229/255, green: 115/255, blue: 115/255, alpha: 1.0)
         }
     }
 
