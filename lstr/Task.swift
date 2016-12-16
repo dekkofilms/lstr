@@ -12,6 +12,7 @@ class Task {
     
     private var _taskName: String!
     private var _completed: Bool!
+    private var _taskKey: String!
     
     var taskName: String {
         return _taskName
@@ -21,9 +22,19 @@ class Task {
         return _completed
     }
     
-    init(taskName: String, completed: Bool) {
+    var taskKey: String {
+        get {
+            return _taskKey
+        }
+        set(taskKey) {
+            self._taskKey = taskKey
+        }
+    }
+    
+    init(taskName: String, completed: Bool, taskKey: String) {
         self._taskName = taskName
         self._completed = completed
+        self._taskKey = taskKey
     }
     
     func toAnyObject() -> Any {

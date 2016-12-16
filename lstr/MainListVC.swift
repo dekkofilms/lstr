@@ -145,6 +145,7 @@ extension MainListVC: UITableViewDelegate {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let viewController = sb.instantiateViewController(withIdentifier: "TaskListVC") as! TaskListVC
         
+        viewController.modalTransitionStyle = .flipHorizontal
         viewController.list = list
         
         self.present(viewController, animated: true, completion: nil)

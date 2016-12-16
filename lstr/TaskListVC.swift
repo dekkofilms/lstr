@@ -28,8 +28,8 @@ class TaskListVC: UIViewController {
                 self.tasks = []
                 for snap in snapshots {
                     if let taskDict = snap.value as? Dictionary<String, AnyObject> {
-                        print("TAYLOR: ---snap--- \(taskDict)")
-                        self.tasks.append(Task(taskName: taskDict["name"] as! String, completed: taskDict["completed"] as! Bool))
+                        print("TAYLOR: ---snap--- \(snap.key)")
+                        self.tasks.append(Task(taskName: taskDict["name"] as! String, completed: taskDict["completed"] as! Bool, taskKey: snap.key))
                         self.tableView.reloadData()
                     }
                 }
@@ -38,7 +38,7 @@ class TaskListVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.listNameLabel.text = list.listName + ":"
+        self.listNameLabel.text = list.listName
     }
     
     
@@ -64,10 +64,10 @@ class TaskListVC: UIViewController {
             let tasksRef = DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks")
                 
             if let taskName = alertController.textFields?.first?.text {
-                let taskRef = tasksRef.child(taskName.lowercased())
+                let taskRef = tasksRef.childByAutoId()
                 
-                let task = Task(taskName: taskName, completed: false)
-                taskRef.setValue(task.toAnyObject(), withCompletionBlock: { (error, ref) in
+                let task = ["name" : taskName, "completed" : false] as [String : Any]
+                taskRef.setValue(task, withCompletionBlock: { (error, ref) in
                     if error != nil {
                         print("TAYLOR: unable to push into database \(error)")
                     } else {
@@ -97,6 +97,7 @@ extension TaskListVC: UITableViewDataSource {
         let task = tasks[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
+        
         cell.configureCell(task: task)
         
         return cell
@@ -111,15 +112,35 @@ extension TaskListVC: UITableViewDataSource {
         let task = tasks[indexPath.row]
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
-            print("TAYLOR \(task.taskName)")
-            print("edit button tapped")
+            print("TAYLOR \(task.taskKey)")
+            
+            let alertController: UIAlertController = UIAlertController(title: "Edit Task", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addTextField { (textField) in
+                textField.placeholder = task.taskName
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (result) in
+                print("TAYLOR: action cancelled")
+            })
+            
+            let okAction = UIAlertAction(title: "Enter", style: UIAlertActionStyle.default, handler: { (result) in
+                if let updatedValue = alertController.textFields?.first?.text {
+                    DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks").child(task.taskKey).updateChildValues(["name" : updatedValue])
+                }
+            })
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
         }
         
         edit.backgroundColor = UIColor.lightGray
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, indexPath in
             print("TAYLOR \(task)")
-            DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks").child(task.taskName.lowercased()).removeValue()
+            DataService.ds.REF_LISTS.child(self.list.listKey).child("tasks").child(task.taskKey).removeValue()
             print("favorite button tapped")
         }
         delete.backgroundColor = UIColor.red
@@ -132,6 +153,20 @@ extension TaskListVC: UITableViewDataSource {
 extension TaskListVC: UITableViewDelegate {
     @objc(tableView:commitEditingStyle:forRowAtIndexPath:) func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         //apparently this method does nothing, and i hate that, but you need this
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as! TaskCell! else { return }
+        
+        let task = tasks[indexPath.row]
+        let toggledCompletion = !task.completed
+        
+        cell.toggleCompletion(cell, toggledCompletion: toggledCompletion)
+        
+        DataService.ds.REF_LISTS.child(list.listKey).child("tasks").child(task.taskKey).updateChildValues(["completed" : toggledCompletion])
+            
+            
     }
 }
 
