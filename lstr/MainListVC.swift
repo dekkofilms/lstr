@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class MainListVC: UIViewController {
+class MainListVC: UIViewController, SignInVCDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,12 +23,15 @@ class MainListVC: UIViewController {
         //rgba(248, 242, 240, 1)
         self.tableView.backgroundColor = UIColor.init(red: 248/255, green: 242/255, blue: 240/255, alpha: 1.0)
         
+        viewWillBeDismissed()
+    }
+    
+    func viewWillBeDismissed() {
+        print("TAYLOR: BOOYYAHHHHH")
         if let userKey = KeychainWrapper.standard.string(forKey: KEY_UID) {
             DataService.ds.REF_USERS.child(userKey).child("lists").observe(.value, with: { (snapshot) in
                 if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                     print("TAYLOR-SNAPSHOT: \(snapshots)")
-                    
-                    
                     self.lists = []
                     for snap in snapshots {
                         print("TAYLOR: snap ---- \(snap)")
@@ -37,15 +40,10 @@ class MainListVC: UIViewController {
                             self.lists.append(List(name: listDict["name"] as! String, key: snap.key))
                             self.tableView.reloadData()
                         }
-                        //if let listName = snap["name"] as? String {
-                        //print("TAYLOR: \(listName)")
-                        //let list = List(name: snap.name)
-                        //}
                     }
                 }
             })
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,8 +51,11 @@ class MainListVC: UIViewController {
         let user = KeychainWrapper.standard.string(forKey: KEY_UID)
         print("TAYLOR: \(user)")
         if user == nil {
+            
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let signInVC = sb.instantiateViewController(withIdentifier: "SignInVC")
+            let signInVCDelegation: SignInVC = signInVC as! SignInVC
+            signInVCDelegation.delegate = self
                 
             present(signInVC, animated: false, completion: nil)
         }

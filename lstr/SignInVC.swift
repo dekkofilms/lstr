@@ -15,6 +15,8 @@ class SignInVC: UIViewController {
     
     @IBOutlet weak var emailField: SingleBorderBottom!
     @IBOutlet weak var passwordField: SingleBorderBottom!
+    
+    var delegate: SignInVCDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,8 @@ class SignInVC: UIViewController {
                 } else {
                     if let user = user {
                         KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                        
+                        self.delegate?.viewWillBeDismissed()
                         self.dismiss(animated: true, completion: nil)
                     }
                 }
@@ -42,4 +46,8 @@ class SignInVC: UIViewController {
     }
     
 
+}
+
+protocol SignInVCDelegate {
+    func viewWillBeDismissed()
 }
