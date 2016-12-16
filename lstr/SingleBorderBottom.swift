@@ -9,6 +9,12 @@
 import UIKit
 
 class SingleBorderBottom: UITextField {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //rgba(236, 240, 241,1.0)
+        self.setValue(UIColor.init(colorLiteralRed: 236/255, green: 240/255, blue: 241/255, alpha: 1.0), forKeyPath: "_placeholderLabel.textColor")
+    }
 
     override func draw(_ rect: CGRect) {
         

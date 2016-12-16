@@ -26,6 +26,7 @@ class Task {
         get {
             return _taskKey
         }
+        
         set(taskKey) {
             self._taskKey = taskKey
         }
