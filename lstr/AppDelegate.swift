@@ -17,19 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        //let user = KeychainWrapper.standard.string(forKey: KEY_UID)
-        //if user == nil {
-        //    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //    let SignInVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInVC")
-        //    self.window?.rootViewController = SignInVC
-        //} else {
-        //    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //    let mainListVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainListVC")
-        //    self.window?.rootViewController = mainListVC
-        //}
-        
-        
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
         return true

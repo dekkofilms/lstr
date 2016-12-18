@@ -32,7 +32,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.42352941179999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-yA-wam" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-yA-wam" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
+                                <frame key="frameInset" minX="75" minY="261" width="225" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
@@ -43,7 +45,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVC-Vt-nex" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVC-Vt-nex" customClass="SingleBorderBottom" customModule="lstr" customModuleProvider="target">
+                                <frame key="frameInset" minX="75" minY="310" width="225" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
@@ -54,7 +58,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USd-qH-Wgu" customClass="CircleButton" customModule="lstr" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USd-qH-Wgu" customClass="CircleButton" customModule="lstr" customModuleProvider="target">
+                                <frame key="frameInset" minX="209" minY="357" width="91" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +69,9 @@
                                     <action selector="signInBtnTapped:" destination="Ilx-zj-m9h" eventType="touchUpInside" id="u3o-1j-8MV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj9-DV-L8W">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj9-DV-L8W">
+                                <frame key="frameInset" minX="101" minY="620" width="172" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <state key="normal" title="New? Create an Account">
                                     <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,20 +82,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aVC-Vt-nex" firstAttribute="top" secondItem="GY6-yA-wam" secondAttribute="bottom" constant="28" id="5YX-Kg-q7e"/>
-                            <constraint firstItem="USd-qH-Wgu" firstAttribute="leading" secondItem="l0R-rg-vpD" secondAttribute="leadingMargin" constant="193" id="7wn-Tp-X2i"/>
-                            <constraint firstItem="GY6-yA-wam" firstAttribute="top" secondItem="f1i-wq-wxV" secondAttribute="bottom" constant="241" id="CpE-Ol-CwJ"/>
-                            <constraint firstItem="USd-qH-Wgu" firstAttribute="top" secondItem="aVC-Vt-nex" secondAttribute="bottom" constant="26" id="F5J-NZ-Jdn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GY6-yA-wam" secondAttribute="trailing" constant="59" id="GAu-qH-Hxi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uj9-DV-L8W" secondAttribute="trailing" constant="86" id="IVf-YS-jik"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aVC-Vt-nex" secondAttribute="trailing" constant="59" id="fUE-H7-EZo"/>
-                            <constraint firstItem="GY6-yA-wam" firstAttribute="leading" secondItem="l0R-rg-vpD" secondAttribute="leadingMargin" constant="59" id="hZC-IF-TOW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="USd-qH-Wgu" secondAttribute="trailing" constant="59" id="iyl-fn-Icl"/>
-                            <constraint firstItem="uj9-DV-L8W" firstAttribute="leading" secondItem="l0R-rg-vpD" secondAttribute="leadingMargin" constant="85" id="odW-Em-XuG"/>
-                            <constraint firstItem="aVC-Vt-nex" firstAttribute="leading" secondItem="l0R-rg-vpD" secondAttribute="leadingMargin" constant="59" id="rNQ-aV-ymX"/>
-                            <constraint firstItem="q3j-Zx-lfD" firstAttribute="top" secondItem="uj9-DV-L8W" secondAttribute="bottom" constant="20" id="wct-mP-avY"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="GY6-yA-wam" id="acf-WL-aAo"/>
